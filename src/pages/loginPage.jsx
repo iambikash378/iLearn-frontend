@@ -10,23 +10,32 @@ function LoginPage() {
     const [password, setPassword] = useState('');
     const navigate = useNavigate();
 
-    const handleLogin = (e) =>{
+    const handleLogin = (e) => {
         e.preventDefault();
-        axios.post('http://127.0.0.1:3000/user/login',
-            {useremail, password}
-        ).then(response => {
-            console.log(response)
-            navigate("/",
-                {
-                    state:{
-                        hasLoggedIn : true,
-                        nameOfUser : response.data.user
-                    }
+    
+        axios.post('http://127.0.0.1:3000/user/login', { useremail, password })
+          .then(response => {
+            const data = response.data;
+    
+            if (data.token) {
+              localStorage.setItem("token", data.token);
+              console.log("Token Saved");
+    
+              navigate("/", {
+                state: {
+                  hasLoggedIn: true,
+                  nameOfUser: data.user
                 }
-            )
-        }
- )      
-    .catch(err=> console.log(err) )   }
+              });
+            } else {
+              console.log("Login failed:", data.Message || "No token received");
+            }
+          })
+          .catch(err => {
+            console.error("Login error:", err);
+          });
+      };
+          
 
     return(
         <div>

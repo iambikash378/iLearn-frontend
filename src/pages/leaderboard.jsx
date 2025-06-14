@@ -5,10 +5,23 @@ function LeaderBoardPage(){
     const [data, setData] = useState([]);
 
     useEffect(()=>{
-        fetch('http://localhost:8000/leaderboard/show')
-        .then(response => response.json())
-        .then(data => setData(data))
-        .catch(err => console.error("Error fetching leaderboard", err))
+        const token = localStorage.getItem("token");
+        fetch('http://localhost:3000/leaderboard/show', {
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        })
+        .then(response => {
+            if (!response.ok){
+                throw new Error(`HTTP Error ${response.status}`);
+            }
+            return response.json();
+        })
+        .then(response => {
+            console.log("Fetched data:", response)
+            setData(response)
+        })
+        .catch(err => console.error("Error fetching leaderboard", err));
     },[])
 
     return(
