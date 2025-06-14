@@ -12,7 +12,7 @@ function LoginPage() {
 
     const handleLogin = (e) =>{
         e.preventDefault();
-        axios.post('http://127.0.0.1:8000/user/login',
+        axios.post('http://127.0.0.1:3000/user/login',
             {useremail, password}
         ).then(response => {
             console.log(response)
@@ -20,7 +20,7 @@ function LoginPage() {
                 {
                     state:{
                         hasLoggedIn : true,
-                        nameOfUser : response.data.user.name
+                        nameOfUser : response.data.user
                     }
                 }
             )
