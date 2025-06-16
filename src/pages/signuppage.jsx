@@ -1,10 +1,17 @@
 import React, {useState} from 'react';
 import axios from 'axios';
 import Button from '@mui/material/Button';
+import Radio from '@mui/material/Radio';
+import RadioGroup from '@mui/material/RadioGroup';
+import FormControl from '@mui/material/FormControl'
+import GenderRadio from '../components/forms/signup/gender';
+import FullName from '../components/forms/signup/fullName';
+import Email from '../components/forms/signup/email';
+import NewPassword from '../components/forms/signup/password';
+import DoB from '../components/forms/signup/dob';
 
 
-
-function SignUpPage() {
+function SignUpPage(props) {
 
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
@@ -14,7 +21,7 @@ function SignUpPage() {
 
     const handleSignup = (e) => {
         e.preventDefault();
-        axios.post("http://localhost:8000/user/add",
+        axios.post("http://localhost:3000/user/add",
             {name, email, password, gender, dob}
         ).then(result => {console.log(result)})
         .catch(err => console.log(err) )
@@ -25,79 +32,11 @@ function SignUpPage() {
             <h2> Sign Up </h2>
             <h3>Fill the form below for registration</h3> 
             <form onSubmit = {handleSignup}>
-
-                <label for = 'fullname'> <strong> Full Name </strong></label><br/>
-                <input type = "text" 
-                id = "fullname" 
-                name = "fullname"
-                value = {name}
-                onChange = {(e) => setName(e.target.value)}/> <br/>
-
-                <label for = 'email'><strong>Email </strong> </label> <br/>
-                <input type = "email" 
-                id = "email" 
-                name = "email"
-                value = {email}
-                onChange = {(e) => setEmail(e.target.value) }/> <br/>
-
-                <label for = 'password'><strong>Password </strong> </label> <br/>
-                <input type = "password" 
-                id = "password" 
-                name = "password"
-                value = {password}
-                onChange = {(e) => setPassword(e.target.value) }/> <br/>
-
-                <label><strong>Gender </strong> </label> <br/>
-                
-                <input type = "radio" 
-                id = "male" 
-                value = "male" 
-                name ="gender"
-                checked = {gender === "male"}
-                onChange = {(e) => {
-                    console.log(e.target.value);
-                    setGender(e.target.value);
-                }
-                }/>
-                <label for = 'male'> Male </label> <br/>
-                
-                <input type = "radio" 
-                id = "female" 
-                value = "female"
-                checked = {gender === "female"}
-                name ="gender"
-                onChange = {(e) => {
-                    setGender(e.target.value);
-                }}/>
-                <label for = 'female'> Female </label> <br/>
-                
-                <input type = "radio" 
-                id = "others" 
-                value = "others" 
-                checked = {gender === "others"}
-                name ="gender"
-                onChange = {(e) => {
-                    setGender(e.target.value);
-                }}/>
-                <label for = 'others'> Others </label> <br/>
-                
-                <input type = "radio" 
-                id = "notsaying" 
-                value = "notsaying" 
-                name ="gender"
-                checked = {gender === "notsaying"}
-                onChange = {(e) => {
-                    setGender(e.target.value);
-                }}/>
-                <label for = 'notsaying'> Prefer Not To Say </label><br/>
-                <br/>
-
-                <label for = "birth"> <strong>Date Of Birth</strong> </label> <br/>
-                <input type = "date" 
-                id = "birth"
-                onChange = {(e) => setDob(e.target.value) }/> <br/>
-                <br/>
-
+                <FullName value = {name} setterFunction={setName}/> <br/>
+                <Email value = {email} setterFunction={setEmail}/> <br/>
+                <NewPassword value = {password} setterFunction={setPassword}/> <br/>
+                <GenderRadio value = {gender} setterFunction = {setGender}/> <br/>
+                <DoB value = {dob} setterFunction={setDob}/><br/>
                 <Button variant = "contained" type = "submit">Register</Button>
             </form>
         </div>

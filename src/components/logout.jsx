@@ -5,6 +5,7 @@ function LogOut({setHasLoggedIn, setNameOfUser}) {
     function handleLogout(){
         setHasLoggedIn(false);
         setNameOfUser('');
+        localStorage.removeItem("token");
     }
 
     return(
