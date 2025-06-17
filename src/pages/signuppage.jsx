@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import {useNavigate} from 'react-router-dom';
 import axios from 'axios';
 import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';
@@ -19,6 +20,8 @@ function SignUpPage(props) {
     const [password, setPassword] = useState('');
     const [gender, setGender] = useState('');
     const [dob, setDob] = useState();
+
+    const navigate = useNavigate();
 
     const handleSignup = (e) => {
         e.preventDefault();
@@ -62,12 +65,17 @@ function SignUpPage(props) {
                 }}>
                <h2> Register </h2>
                <form onSubmit = {handleSignup}>
+                <Stack 
+                    sx = {{alignItems:'center'}}>
                 <FullName value = {name} setterFunction={setName}/> <br/>
                 <Email value = {email} setterFunction={setEmail}/> <br/>
                 <NewPassword value = {password} setterFunction={setPassword}/> <br/>
-                <GenderRadio value = {gender} setterFunction = {setGender}/> <br/>
                 <DoB value = {dob} setterFunction={setDob}/><br/>
                 <Button variant = "contained" type = "submit">Register</Button>
+                <Typography>
+                    Already have an account? <Button variant="" onClick ={()=> navigate('/login')} >Login</Button>
+                </Typography>
+                </Stack>
             </form>
                 </Stack>
 
