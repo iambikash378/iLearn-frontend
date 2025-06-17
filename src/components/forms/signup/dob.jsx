@@ -23,6 +23,7 @@ export default function DoB({value, setterFunction}){
         <DatePicker
             label = ""
             value = {value}
+            size="small"
             onChange = {(value) => setterFunction(value)}/>
         </LocalizationProvider>
     </FormControl>

@@ -23,6 +23,7 @@ export default function FullName({value, setterFunction}){
                 placeholder = "bikash adhikari"
                 error = {fullNameError}
                 onChange = {(e)=> setterFunction(e.target.value)}
+                size= "small"
                 helperText = {nameErrorMessage}/>
     </FormControl>
     )

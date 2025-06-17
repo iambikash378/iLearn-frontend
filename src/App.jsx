@@ -10,6 +10,8 @@ import SignUpPage from './pages/signuppage';
 
 import QuestionPage from './pages/questionpage';
 
+import AlternateLanding from './pages/alternatelandingpage';
+
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
@@ -21,6 +23,8 @@ const App= () => {
         <Route path = "/" element = {<LandingPage />} />
         <Route path = "/login" element = {<LoginPage />} />
         <Route path = "/signup" element = {<SignUpPage />} />
+        <Route path = "/alternate" element = {<AlternateLanding />} />
+
       </Routes>
     </Router>
   )

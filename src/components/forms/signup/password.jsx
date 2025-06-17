@@ -22,6 +22,7 @@ export default function NewPassword({value, setterFunction}){
                 error = {passwordError}
                 value = {value}
                 onChange = {(e) => setterFunction(e.target.value)}
+                size="small"
                 helperText = {passwordErrorMessage}/>
     </FormControl>
     )

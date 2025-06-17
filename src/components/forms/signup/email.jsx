@@ -24,6 +24,7 @@ export default function Email({value, setterFunction}){
                 error = {emailError}
                 value = {value}
                 onChange ={(event)=>setterFunction(event.target.value)}
+                size = "small"
                 helperText = {emailErrorMessage}/>
     </FormControl>
     )
