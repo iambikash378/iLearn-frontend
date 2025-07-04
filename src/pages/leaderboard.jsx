@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react';
+import backend from '../api/api';
 
 function LeaderBoardPage(){
 
@@ -6,20 +7,15 @@ function LeaderBoardPage(){
 
     useEffect(()=>{
         const token = localStorage.getItem("token");
-        fetch('http://localhost:3000/leaderboard/show', {
+
+        backend.get('/leaderboard/show', {
             headers: {
                 Authorization: `Bearer ${token}`
             }
         })
         .then(response => {
-            if (!response.ok){
-                throw new Error(`HTTP Error ${response.status}`);
-            }
-            return response.json();
-        })
-        .then(response => {
-            console.log("Fetched data:", response)
-            setData(response)
+            console.log("Fetched Data", response.data);
+            setData(response.data);
         })
         .catch(err => console.error("Error fetching leaderboard", err));
     },[])

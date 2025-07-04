@@ -11,6 +11,8 @@ import NewPassword from '../components/forms/signup/password';
 import DoB from '../components/forms/signup/dob';
 
 import { Container, Typography, Button, Box, Stack, Paper, createTheme, ThemeProvider, Grid } from '@mui/material';
+import { blueGrey, indigo, lightBlue, purple } from '@mui/material/colors';
+import backend from '../api/api';
 
 
 function SignUpPage(props) {
@@ -25,7 +27,7 @@ function SignUpPage(props) {
 
     const handleSignup = (e) => {
         e.preventDefault();
-        axios.post("http://localhost:3000/user/add",
+        backend.post("/user/add",
             {name, email, password, gender, dob}
         ).then(result => {console.log(result)})
         .catch(err => console.log(err) )
@@ -71,9 +73,10 @@ function SignUpPage(props) {
                 <Email value = {email} setterFunction={setEmail}/> <br/>
                 <NewPassword value = {password} setterFunction={setPassword}/> <br/>
                 <DoB value = {dob} setterFunction={setDob}/><br/>
-                <Button variant = "contained" type = "submit">Register</Button>
+                <Button variant = "contained" type = "submit" 
+                sx={{textTransform:"none", bgcolor: lightBlue[800] , "&:hover":{bgcolor: lightBlue[900]}}}>Register</Button>
                 <Typography>
-                    Already have an account? <Button variant="" onClick ={()=> navigate('/login')} >Login</Button>
+                    Already have an account? <Button variant="" onClick ={()=> navigate('/login')} sx={{textTransform:"none"}} >Login</Button>
                 </Typography>
                 </Stack>
             </form>
