@@ -10,7 +10,7 @@ import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 
 const TopBarBox = styled(Paper)(({theme}) =>({
     display:'flex',
-    height:'100%',
+    height:'50px',
     justifyContent:'space-between',
     alignItems:'center',
     backgroundColor:'whitesmoke',
@@ -49,7 +49,6 @@ const TopBar = () =>{
                 <AccountCircleRoundedIcon color='primary' fontSize='large' sx={{cursor:'pointer'}}/>
                 <ArrowDropDownIcon color='primary' fontSize='large' sx={{cursor:'pointer'}}/>
             </TopBarRightIcons>
-
         </TopBarBox>
     )
 

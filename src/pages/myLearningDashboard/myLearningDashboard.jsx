@@ -3,6 +3,8 @@ import TopBar from "../../components/navbars/topbar";
 import {backend, user} from "../../api/api";
 import { useEffect, useState } from "react";
 
+// Loads on /mylearningdashboard
+
 export default function MyLearningDashboard(){
 
     const [courses, setCourses] = useState([]);

@@ -5,7 +5,7 @@ import Button from '@mui/material/Button';
 import { Container, Box, Stack, Typography } from '@mui/material';
 import Password from '../components/forms/login/password';
 import UserEmail from '../components/forms/login/useremail';
-import backend from '../api/api';
+import {backend} from '../api/api';
 
 function LoginPage() {
 

@@ -12,7 +12,7 @@ import DoB from '../components/forms/signup/dob';
 
 import { Container, Typography, Button, Box, Stack, Paper, createTheme, ThemeProvider, Grid } from '@mui/material';
 import { blueGrey, indigo, lightBlue, purple } from '@mui/material/colors';
-import backend from '../api/api';
+import {backend} from '../api/api';
 
 
 function SignUpPage(props) {

@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import backend from '../api/api';
+import {backend} from '../api/api';
 
 function LeaderBoardPage(){
 
