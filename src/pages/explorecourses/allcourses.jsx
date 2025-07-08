@@ -66,11 +66,12 @@ const ExplorePage = (props) => {
         <Box sx={{width:'100vw'}}>
             <ExplorePageGrid container>
 
-                <Grid item xs={5}>
+                <Grid size={{md:12, xs:12}}>
                     <TopNavBar />
+                    
                 </Grid>
 
-                <Grid item xs={4}>
+                <Grid size={{md:4, xs:0}} display={{xs:'none', md:'block'}}>
                     <FilterBar 
                         filters={filters} 
                         selectedFilters={selectedFilters} 
@@ -78,10 +79,11 @@ const ExplorePage = (props) => {
                         filteredResults={filteredResults}
                         setFilteredResults={setFilteredResults}
                     />
+
                 </Grid>
 
-                <Grid item xs ={8} >
-                    <ExploreResults results={filteredResults} filteredResults={filteredResults} style={{ width: "100%" }}/>
+                <Grid size={{md:8, xs:12}}>
+                        <ExploreResults results={filteredResults} filteredResults={filteredResults}/>
                 </Grid>
 
             </ExplorePageGrid>

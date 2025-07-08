@@ -4,7 +4,7 @@ const CourseCard = ({coursedetails}) =>{
 
     return(
         <>
-            <Card>
+            <Card sx={{height:'200px', width:'200px', flex:'0 1 auto'}}>
                 <CardHeader title={coursedetails.title}/>
                 <CardContent>
                     {coursedetails.descriptionShort}

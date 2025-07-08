@@ -1,9 +1,10 @@
+import { Box } from "@mui/material"
 import FilterCard from "./filtercard"
 
 const FilterBar = ({selectedFilters, setSelectedFilters, filters=[], handleToggle, filteredResults, setFilteredResults}) =>{
 
     return(
-        <>
+        <Box sx={{mt:'10px'}}>
             {
                 filters.map( filter =>(
                     <FilterCard 
@@ -16,7 +17,7 @@ const FilterBar = ({selectedFilters, setSelectedFilters, filters=[], handleToggl
                     />
                 ))
             }
-        </>
+        </Box>
     )
 }
 
