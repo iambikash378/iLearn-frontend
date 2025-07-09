@@ -13,7 +13,7 @@ const SidebarPaper = styled(Paper)(()=>({
     backgroundColor:blueGrey[900],
     height:'100%',
     width:"100%",
-    borderStyle:'dotted'
+    //borderStyle:'dotted'
 
 }));
 
@@ -24,7 +24,7 @@ const TopInfoPart = styled(Box)(()=>({
 const NavigationPart=styled(Stack)(()=>({
 justifyContent:'space-around', 
 height:'100%',
-borderStyle:'dotted',
+//borderStyle:'dotted',
 alignItems:'flex-start',
 
 }));

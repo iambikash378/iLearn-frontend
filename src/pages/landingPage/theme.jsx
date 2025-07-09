@@ -1,20 +1,18 @@
-import {createTheme} from '@mui/material';
-import {blue, cyan, lightBlue, lightGreen, purple} from '@mui/material/colors';
-  
+import {createTheme} from '@mui/material';  
   
   const theme = createTheme({
     palette:{
         primary:{
-            main: lightBlue[200],
-            light: lightBlue[100],
-            dark: lightBlue[800],
+            main: '#56CBF9',
+            light: '#9DE1FB',
+            dark: '#9DE1FB',
         },
         secondary:{
-            main: cyan[500],
-            light: cyan[200],
-            dark: cyan[800]
+            main: '#81F4E1',
+            light: '#81F4E1',
+            dark: '#0B8371'
         }
     }
   });
 
-  export default theme;
+export default theme;

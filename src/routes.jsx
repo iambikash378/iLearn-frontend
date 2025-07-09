@@ -1,12 +1,12 @@
 import { Routes, Route } from "react-router-dom";
-import LandingPage from "./pages/oldlandingpage";
 import LoginPage from "./pages/loginPage";
 import SignUpPage from "./pages/signuppage";
 import Dashboard from "./pages/coursedashboard/dashboard";
 import MyLearningDashboard from "./pages/myLearningDashboard/myLearningDashboard";
 import OldLandingPage from "./pages/oldlandingpage";
 import ExplorePage from "./pages/explorecourses/allcourses";
-import LectureVideo from "./pages/lecture-video/lectureVideo";
+import LectureVideo from "./pages/lecture-video/lectureVideoPage";
+import LandingPage from "./pages/landingPage/landingpage";
 
 
 export default function AppRoutes(){
