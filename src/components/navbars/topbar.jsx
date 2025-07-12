@@ -8,13 +8,13 @@ import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 
 
-const TopBarBox = styled(Paper)(({theme}) =>({
+const TopBarBox = styled(Box)(({theme}) =>({
     display:'flex',
-    height:'50px',
+    height:'70px',
     justifyContent:'space-between',
     alignItems:'center',
-    backgroundColor:'whitesmoke',
-    width:'100%'
+    width:'100%',
+    borderBottom: '.1em solid #dae1ed'
   }));
 
 const TopBarRightIcons = styled(Stack)(({theme}) => ({

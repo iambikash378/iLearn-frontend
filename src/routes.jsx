@@ -5,7 +5,7 @@ import Dashboard from "./pages/coursedashboard/dashboard";
 import MyLearningDashboard from "./pages/myLearningDashboard/myLearningDashboard";
 import OldLandingPage from "./pages/oldlandingpage";
 import ExplorePage from "./pages/explorecourses/allcourses";
-import LectureVideo from "./pages/lecture-video/lectureVideoPage";
+import LectureVideoPage from "./pages/learningPage/lecturesandallpage";
 import LandingPage from "./pages/landingPage/landingpage";
 
 
@@ -19,7 +19,7 @@ export default function AppRoutes(){
             <Route path = "/dashboard" element = {<Dashboard />} />
             <Route path = "/mylearningdashboard" element = {<MyLearningDashboard/>} />
             <Route path = "/allcourses" element = {<ExplorePage />} />
-            <Route path ='/lecturepage' element = {<LectureVideo/>} />
+            <Route path ='/lecturepage' element = {<LectureVideoPage/>} />
         </Routes>
     )
 }
