@@ -14,12 +14,13 @@ import dummyCourse from '../../data/dummyCourse.json';
 
 function LectureVideoPage(){
 
-    const [activeModule, setActiveModule] = useState({});
-    const [activeSubmodule, setActiveSubmodule] = useState({}); 
+    const course = dummyCourse;
+
+    const [activeModule, setActiveModule] = useState(course.modules[0]);
+    const [activeSubmodule, setActiveSubmodule] = useState(course.modules[0].moduleContents[0]); 
     const [contentLink, setContentLink] = useState('');
     const [isCompleted, setIsCompleted] = useState({});
 
-    const course = dummyCourse;
 
 
     return(
