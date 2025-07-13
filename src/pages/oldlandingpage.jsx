@@ -12,7 +12,7 @@ import LogOut from '../components/logout';
 
 import {useLocation} from 'react-router-dom';
 
-function LandingPage(){
+function OldLandingPage(){
 
     const location = useLocation();
 
@@ -61,4 +61,4 @@ function LandingPage(){
     );
 }
 
-export default LandingPage;
+export default OldLandingPage;

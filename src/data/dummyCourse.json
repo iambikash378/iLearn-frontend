@@ -1,0 +1,84 @@
+{
+  "courseName": "Introduction to AI",
+  "modules": [
+    {
+      "moduleName": "Basics of AI",
+      "moduleContents": [
+        {
+          "title": "What is AI?",
+          "type": "video",
+          "url": "ai.mp4",
+          "length": "8:30"
+        },
+        {
+          "title": "History of AI",
+          "type": "reading",
+          "length": "4 pages",
+          "htmlName": "history-of-ai.html"
+        }
+      ]
+    },
+    {
+      "moduleName": "Machine Learning",
+      "moduleContents": [
+        {
+          "title": "Supervised vs Unsupervised",
+          "type": "video",
+          "url": "aiAndAll.mp4",
+          "length": "10:00"
+        }
+      ]
+    },
+    {
+      "moduleName": "Deep Learning",
+      "moduleContents": [
+        {
+          "title": "Neural Networks Explained",
+          "type": "video",
+          "url": "https://example.com/video3.mp4",
+          "length": "12:45"
+        },
+        {
+          "title": "Backpropagation Basics",
+          "type": "reading",
+          "length": "6 pages",
+          "htmlName": "backpropagation-basics.html"
+        }
+      ]
+    },
+    {
+      "moduleName": "Natural Language Processing",
+      "moduleContents": [
+        {
+          "title": "Introduction to NLP",
+          "type": "video",
+          "url": "teaching.mp4",
+          "length": "9:20"
+        },
+        {
+          "title": "Text Preprocessing",
+          "type": "reading",
+          "length": "5 pages",
+          "htmlName":"textpreprocessing.html"
+        }
+      ]
+    },
+    {
+      "moduleName": "AI in Practice",
+      "moduleContents": [
+        {
+          "title": "AI in Healthcare",
+          "type": "video",
+          "url": "randomz.mp4",
+          "length": "7:50"
+        },
+        {
+          "title": "Ethics in AI",
+          "type": "reading",
+          "length": "3 pages",
+          "htmlName":"ethicsinai.html"
+        }
+      ]
+    }
+  ]
+}

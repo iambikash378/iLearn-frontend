@@ -2,7 +2,10 @@ import React, {useState} from 'react';
 import axios from 'axios';
 import {useNavigate } from 'react-router-dom';
 import Button from '@mui/material/Button';
-
+import { Container, Box, Stack, Typography } from '@mui/material';
+import Password from '../components/forms/login/password';
+import UserEmail from '../components/forms/login/useremail';
+import {backend} from '../api/api';
 
 function LoginPage() {
 
@@ -10,45 +13,83 @@ function LoginPage() {
     const [password, setPassword] = useState('');
     const navigate = useNavigate();
 
-    const handleLogin = (e) =>{
+    const handleLogin = (e) => {
         e.preventDefault();
-        axios.post('http://127.0.0.1:8000/user/login',
-            {useremail, password}
-        ).then(response => {
-            console.log(response)
-            navigate("/",
-                {
-                    state:{
-                        hasLoggedIn : true,
-                        nameOfUser : response.data.user.name
-                    }
+    
+        backend.post('/user/login', { useremail, password })
+          .then(response => {
+            const data = response.data;
+    
+            if (data.token) {
+              localStorage.setItem("token", data.token);
+              console.log("Token Saved");
+    
+              navigate("/", {
+                state: {
+                  hasLoggedIn: true,
+                  nameOfUser: data.user
                 }
-            )
-        }
- )      
-    .catch(err=> console.log(err) )   }
+              });
+            } else {
+              console.log("Login failed:", data.Message || "No token received");
+            }
+          })
+          .catch(err => {
+            console.error("Login error:", err);
+          });
+      };
+          
 
     return(
-        <div>
-            <h2> Login </h2>
-            <h3>Enter your Login credentials</h3> 
-            <form onSubmit = {handleLogin}>
-                <label htmlFor = 'username'> <strong> Username / Email</strong></label><br/>
-                <input 
-                type = "email" 
-                id = "username"
-                value = {useremail}
-                onChange ={(e)=>setUserEmail(e.target.value)} /> <br/>
+      
 
-                <label htmlFor = 'userpassword'><strong>Password </strong> </label> <br/>
-                <input type = "password" 
-                id = "userpassword"
-                value = {password}
-                onChange ={(e)=>setPassword(e.target.value)}/> <br/>
-                <br/>
-                <Button variant = "contained" type = "submit">Login</Button>
-            </form>
-        </div>
+      <Container maxWidth={false}
+      sx = {{
+          position:'relative',
+          background: 'radial-gradient(circle,rgba(108, 159, 210, 1) 24%, rgba(83, 237, 222, 1) 100%)',
+          alignItems: "center",
+          justifyContent: "center",
+          minHeight:'100vh'
+      }}>
+          
+      <Box 
+      sx = {{
+          position: 'absolute',
+          top: "50%",
+          left: "50%",
+          width: '30%',
+          height:'80%',
+          transform:'translate(-50%, -50%)',
+          bgcolor: 'rgba(255,255,255,0.3)',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems:'center',
+          overflowY: 'auto',
+          borderRadius:'20px',
+      }}>
+                 <Stack maxHeight = {'100%'} position = {'absolute'}
+                  sx = {{
+                      justifyContent:"center",
+                      alignItems:"center"
+                  }}>
+                 <h2> Login </h2>
+                 <form onSubmit = {handleLogin}>
+                  <Stack 
+                      sx = {{alignItems:'center'}}>
+                  <UserEmail value = {useremail} setterFunction={setUserEmail}/> <br/>
+                  <Password value = {password} setterFunction={setPassword}/> <br/>
+                  <Button variant = "contained" type = "submit" sx ={{textTransform:"none"}}>Login</Button>
+                  <Typography>
+                      New to iLearn? <Button variant="" onClick ={()=> navigate('/signup')} sx ={{textTransform:"none"}} >Register</Button>
+                  </Typography>
+                  </Stack>
+              </form>
+                  </Stack>
+  
+              </Box>
+          
+      </Container>
+  
     )
 }
 

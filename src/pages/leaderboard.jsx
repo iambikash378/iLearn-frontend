@@ -1,14 +1,23 @@
 import React, {useEffect, useState} from 'react';
+import {backend} from '../api/api';
 
 function LeaderBoardPage(){
 
     const [data, setData] = useState([]);
 
     useEffect(()=>{
-        fetch('http://localhost:8000/leaderboard/show')
-        .then(response => response.json())
-        .then(data => setData(data))
-        .catch(err => console.error("Error fetching leaderboard", err))
+        const token = localStorage.getItem("token");
+
+        backend.get('/leaderboard/show', {
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        })
+        .then(response => {
+            console.log("Fetched Data", response.data);
+            setData(response.data);
+        })
+        .catch(err => console.error("Error fetching leaderboard", err));
     },[])
 
     return(
