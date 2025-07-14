@@ -32,7 +32,7 @@ export default function CourseContentArea({activeModule, activeSubmodule, conten
         case 'video':
             return (
                 <ContentAreaDiv>
-                    <VideoPlayer videoName={url} />
+                    <VideoPlayer videoName={url} handleMarkCompleted={handleMarkCompleted} activeSubmodule={activeSubmodule} />
                     <MarkAsCompleted onClick={()=>handleMarkCompleted(activeSubmodule)}>
                         Mark as completed
                     </MarkAsCompleted>

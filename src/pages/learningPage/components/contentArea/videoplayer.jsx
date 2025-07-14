@@ -8,11 +8,11 @@ const VideoPlayerContainer = styled.div`
     margin-top:20px;
 `
 
-function VideoPlayer({videoName}){
+function VideoPlayer({videoName, handleMarkCompleted, activeSubmodule}){
     
     return(
     <VideoPlayerContainer>
-        <video height='500px' controls>
+        <video height='500px' controls onEnded={()=>handleMarkCompleted(activeSubmodule)}>
             <source src={`${process.env.REACT_APP_CLOUDFRONT_URL}/${videoName}`} />
         </video>
     </VideoPlayerContainer>

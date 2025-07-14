@@ -2,38 +2,49 @@ import React from 'react';
 import { Container, Typography, Button, Box, Stack, Paper, createTheme, ThemeProvider, Grid, styled } from '@mui/material';
 import theme from "./theme.jsx";
 import NavBar from './components/navbar.jsx';
-
+import TrustedByInstitutions from './components/trustedByInstitutions.jsx';
+import Testimonials from './components/testimonials.jsx';
+import JoinIlearn from './components/joinIlearn.jsx';
+import PriceCard from '../../components/cards/pricingcard.jsx';
+import CourseCard from '../../components/cards/coursecard.jsx';
+import styledReact from 'styled-components';
+import { useNavigate } from 'react-router-dom';
 
 const PageContainer = styled(Container)(({theme}) =>({
   minHeight:'100vh',
-  background: theme.palette.primary.light,
   position:"relative",
   // borderColor:'purple',
   // borderStyle:'dotted'
 }));
 
 
+const TopCourses = styledReact.div`
+  display:flex;
+  flex-wrap:wrap;
+`;
 
-
+const MostPopularText = styledReact.h2`
+  display:flex;
+  justify-content: center;
+`;
 const LandingPage = () => {
 
+  const navigate = useNavigate();
+
   return (
-    <ThemeProvider theme={theme}>
       <PageContainer maxWidth={false} disableGutters>
         <NavBar />
-        <Container maxWidth="100%" sx={{mt:"5em"}}>
-        <Grid container >
-          <Grid item size={{xs: 12, md: 6}} justifyContent="center" sx={{mt:'3rem'}}>
-              <Typography variant="h3">Your <Typography variant="h1" color={theme.palette.secondary.dark}> ULTIMATE </Typography> Learning Experience</Typography>
-          </Grid>
-          <Grid item size={{xs:0, md:6}}>
-            <Box component="img" src="/dashboard.png" width="80%"></Box>
-          </Grid>
-        </Grid>
-        </Container>
-        
+        <JoinIlearn />
+        <MostPopularText>Most Popular Courses</MostPopularText>
+        <TopCourses>
+          <CourseCard onClick={()=>navigate('/lecturepage')}/>
+          <CourseCard/>
+          <CourseCard/>
+          <CourseCard/>
+        </TopCourses>
+        <TrustedByInstitutions/>
+        <Testimonials/>
       </PageContainer>
-    </ThemeProvider>
   );
 };
 

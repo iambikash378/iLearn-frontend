@@ -38,7 +38,10 @@ export default function TopNavigation({course, activeModule, setActiveModule, ac
             setActiveSubmodule(activeModule.moduleContents[indexOfActiveSubmodule - 1]);
         }
 
-        else if(indexOfActiveSubmodule === 0){
+        else if(indexOfActiveSubmodule === 0 && indexOfActiveModule === 0){
+        }
+
+        else {
             const prevModule = course.modules[indexOfActiveModule - 1];
             setActiveModule(prevModule);
             setActiveSubmodule(prevModule.moduleContents[prevModule.moduleContents.length - 1]);
@@ -56,7 +59,10 @@ export default function TopNavigation({course, activeModule, setActiveModule, ac
             setActiveSubmodule(activeModule.moduleContents[indexOfActiveSubmodule + 1]);
         }
 
-        else if(indexOfActiveSubmodule === activeModule.moduleContents.length - 1 ){
+        else if(indexOfActiveSubmodule === activeModule.moduleContents.length - 1  && indexOfActiveModule === course.modules.length-1){
+        }
+
+        else {
             const nextModule = course.modules[indexOfActiveModule + 1];
             setActiveModule(nextModule);
             setActiveSubmodule(nextModule.moduleContents[0]);
@@ -72,6 +78,7 @@ export default function TopNavigation({course, activeModule, setActiveModule, ac
 
             <PrevNext>
                 <GoBackButton onClick={()=>handleGoBack()}><span> &lt; </span> <PrevNextSpan> Previous </PrevNextSpan> </GoBackButton>
+                
                 <GoNextButton onClick={()=>handleGoNext()}><PrevNextSpan> Next </PrevNextSpan> <span> &gt; </span> </GoNextButton>
             </PrevNext>
         </TopNav>

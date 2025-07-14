@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 
 const NavbarContainer = styled(Container)(({theme}) => ({
   position:'relative',
-  backgroundColor: theme.palette.primary.main,
+  backgroundColor: 'white',
   height:'4rem',
   // borderColor:'red',
   // borderStyle:'dotted',
@@ -67,15 +67,14 @@ const NavBar = () => {
         <NavbarContainer maxWidth={false}>
           <NavbarLogo component="img" src="/ilearn_logo.png" alt="ilearn logo"></NavbarLogo>
           <NavbarElementContainer direction="row" spacing={2} >
-            <NavbarElement> About </NavbarElement>
-            <NavbarElement> Features </NavbarElement>
-            <NavbarElement> Pricing </NavbarElement>
-            <NavbarElement> Testimonials </NavbarElement>
+            <NavbarElement> Courses </NavbarElement>
+            <NavbarElement> Careers </NavbarElement>
+            <NavbarElement> Premium Plans </NavbarElement>
 
           </NavbarElementContainer>
           <NavbarButtonStack direction={'row'}>
-            <NavbarButton variant='outlined' onClick={()=>Navigate('/login')} > <Typography color="black" fontWeight={"bold"}> Sign In</Typography></NavbarButton>
-            <NavbarButton variant='contained' onClick={()=>Navigate('/signup')} sx={{backgroundColor:(theme)=>theme.palette.secondary.dark, '&:hover':{backgroundColor:(theme)=>theme.palette.secondary.main}}}><Typography color="black" fontWeight={"bold"} >Register</Typography> </NavbarButton>
+            <NavbarButton variant='text' onClick={()=>Navigate('/login')} > <Typography color="black" fontWeight={"bold"}> Sign In</Typography></NavbarButton>
+            <NavbarButton variant='outlined' onClick={()=>Navigate('/signup')} sx={{margin:'5px;'}} ><Typography color="#0056d2" fontWeight={"bold"} >Register</Typography> </NavbarButton>
           </NavbarButtonStack>
         </NavbarContainer>
     </ThemeProvider>
