@@ -7,5 +7,5 @@ The project is still ongoing.
 
 ## Frontend Demo
 
-[(https://github.com/user-attachments/assets/410e1236-b026-428c-870d-63d6ecca22d5)
-](https://github.com/user-attachments/assets/410e1236-b026-428c-870d-63d6ecca22d5)
+[[(https://github.com/user-attachments/assets/410e1236-b026-428c-870d-63d6ecca22d5)
+](https://github.com/user-attachments/assets/410e1236-b026-428c-870d-63d6ecca22d5)](https://github.com/user-attachments/assets/9ea35360-e203-4183-b8ad-8b56f8497110)
