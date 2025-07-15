@@ -7,4 +7,4 @@ The project is still ongoing.
 
 ## Frontend Demo
 
-https://github.com/user-attachments/assets/b8d1c735-e44f-4600-ae55-49946a47a9f0
+(https://github.com/user-attachments/assets/410e1236-b026-428c-870d-63d6ecca22d5)
