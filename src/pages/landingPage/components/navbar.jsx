@@ -65,12 +65,11 @@ const NavBar = () => {
   return (
     <ThemeProvider theme={theme}>
         <NavbarContainer maxWidth={false}>
-          <NavbarLogo component="img" src="/ilearn_logo.png" alt="ilearn logo"></NavbarLogo>
+          <NavbarLogo component="img" src="/ilearn_logo.png" alt="ilearn logo" onClick={()=> Navigate('/')}></NavbarLogo>
           <NavbarElementContainer direction="row" spacing={2} >
-            <NavbarElement> Courses </NavbarElement>
+            <NavbarElement onClick={()=>Navigate('/explorepageFE')}> Courses </NavbarElement>
             <NavbarElement> Careers </NavbarElement>
             <NavbarElement> Premium Plans </NavbarElement>
-
           </NavbarElementContainer>
           <NavbarButtonStack direction={'row'}>
             <NavbarButton variant='text' onClick={()=>Navigate('/login')} > <Typography color="black" fontWeight={"bold"}> Sign In</Typography></NavbarButton>

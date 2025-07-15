@@ -6,7 +6,7 @@ import { TbAntennaBars5 } from "react-icons/tb";
 
 const CourseCardContainer = styled.div`
   margin: 10px;
-  height: 320px;
+  height: 350px;
   width: 300px;
   border: 0.5px solid gray;
   border-radius: 10px;
@@ -67,13 +67,13 @@ const Level = styled.div`
     margin-top: 3px;
 `
 
-export default function CourseCard({onClick}){
+export default function CourseCard({onClick, course}){
 
     return(
         <CourseCardContainer onClick={onClick}>
             <Image src ='/courses/deeplearning.jpeg'/>
-            <Company> Google Inc. </Company>
-            <Title> Introduction to AI</Title>
+            <Company> { course?.company || 'Google Inc.'} </Company>
+            <Title> {course?.title ||'Introduction to AI'}</Title>
             <Length>
                 <ClockIcon/>
                 <Hours> 24 hrs</Hours>

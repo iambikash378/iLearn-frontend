@@ -22,7 +22,7 @@ const FilterCard = ({selectedFilters, setSelectedFilters, filter, filteredResult
 
     return(
         <>
-            <Typography>{filter.filterName}</Typography>
+            <Typography fontWeight={'bold'}>{filter.filterName}</Typography>
             <FormGroup>
                 {
                     filter.options.map((option) =>(

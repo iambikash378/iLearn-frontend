@@ -1,0 +1,55 @@
+[
+    {
+      "filterName": "Subject",
+      "options": [
+        "Business",
+        "Computer Science",
+        "Data Science",
+        "Information Technology"
+      ]
+    },
+    {
+      "filterName": "Language",
+      "options": ["English", "Spanish", "Arabic", "Portuguese (Brazil)"]
+    },
+    {
+      "filterName": "Learning Product",
+      "options": [
+        "Guided Projects",
+        "Courses",
+        "Specializations",
+        "Professional Certificates"
+      ]
+    },
+    {
+      "filterName": "Level",
+      "options": ["Beginner", "Intermediate", "Advanced", "Mixed"]
+    },
+    {
+      "filterName": "Duration",
+      "options": ["Less Than 2 Hours", "1-4 Weeks", "1-3 Months", "3-6 Months"]
+    },
+    {
+      "filterName": "Skills",
+      "options": [
+        "Marketing",
+        "Content Creation",
+        "Social Media Marketing",
+        "Social Media"
+      ]
+    },
+    {
+      "filterName": "Subtitles",
+      "options": ["English", "Spanish", "Arabic", "Vietnamese"]
+    },
+    {
+      "filterName": "Educator",
+      "options": [
+        "Coursera Project Network",
+        "Microsoft",
+        "Coursera Instructor Network",
+        "Goldman Sachs"
+      ]
+    }
+  ]
+  

@@ -48,7 +48,7 @@ export default function Testimonials(){
                     <h3> John F. </h3>
                     <p> United States </p>
                     <h3>
-                    “From taking courses on Coursera, I gained a deep understanding of the UX Design process from start to finish. With the knowledge I gained, 
+                    “From taking courses on iLearn, I gained a deep understanding of the UX Design process from start to finish. With the knowledge I gained, 
                     I feel prepared for entry-level jobs and internships. I've been able to apply the skills and knowledge I gained to multiple projects and work experiences.”
                     </h3>
                 </IndividualTestimonailBlock>
@@ -58,7 +58,7 @@ export default function Testimonials(){
                     <h3> Kenia R. </h3>
                     <p> United States </p>
                     <h3>“Being a mother — especially a working mother means I’m constantly trying to juggle my schedule, my kids’ schedules, 
-                        and work. I am very grateful for the flexible and remote learning programs that Coursera has to offer.”
+                        and work. I am very grateful for the flexible and remote learning programs that iLearn has to offer.”
                     </h3>
                 </IndividualTestimonailBlock>
 
@@ -67,7 +67,7 @@ export default function Testimonials(){
                     <h3> Jitesh S. </h3>
                     <p> France </p>
                     <h3>“I really enjoyed my courses. The quizzes, videos, and quick labs provided helpful hands-on experience. 
-                        Learning on Coursera has given me the confidence and ability to excel in my career. I love this feeling.”
+                        Learning on iLearn has given me the confidence and ability to excel in my career. I love this feeling.”
                     </h3>
                 </IndividualTestimonailBlock>
             </GroupOfThreeTestimonails>

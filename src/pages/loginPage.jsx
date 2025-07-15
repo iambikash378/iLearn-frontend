@@ -70,18 +70,19 @@ function LoginPage() {
                  <Stack maxHeight = {'100%'} position = {'absolute'}
                   sx = {{
                       justifyContent:"center",
-                      alignItems:"center"
+                      alignItems:"center",
+                      width:'100%'
                   }}>
-                 <h2> Login </h2>
-                 <form onSubmit = {handleLogin}>
-                  <Stack 
-                      sx = {{alignItems:'center'}}>
-                  <UserEmail value = {useremail} setterFunction={setUserEmail}/> <br/>
-                  <Password value = {password} setterFunction={setPassword}/> <br/>
-                  <Button variant = "contained" type = "submit" sx ={{textTransform:"none"}}>Login</Button>
-                  <Typography>
-                      New to iLearn? <Button variant="" onClick ={()=> navigate('/signup')} sx ={{textTransform:"none"}} >Register</Button>
-                  </Typography>
+                  <h2> Login </h2>
+                  <form onSubmit = {handleLogin}>
+                    <Stack 
+                        sx = {{alignItems:'center'}}>
+                    <UserEmail value = {useremail} setterFunction={setUserEmail}/> <br/>
+                    <Password value = {password} setterFunction={setPassword}/> <br/>
+                    <Button variant = "contained" type = "submit" sx ={{textTransform:"none"}}>Login</Button>
+                    <Typography>
+                        New to iLearn? <Button variant="" onClick ={()=> navigate('/signup')} sx ={{textTransform:"none"}} >Register</Button>
+                    </Typography>
                   </Stack>
               </form>
                   </Stack>

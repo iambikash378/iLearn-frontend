@@ -1,4 +1,4 @@
-import CourseCard from "./coursecard";
+import CourseCard from "../cards/coursecard";
 import { Box } from "@mui/material";
 
 const ExploreResults = ({results}) =>{
@@ -9,7 +9,7 @@ const ExploreResults = ({results}) =>{
             {
             results && results.length > 0 ? (
                 results.map((result) =>(
-                    <CourseCard coursedetails={result} />
+                    <CourseCard course={result} />
                 )) 
             ):(
                 <p> Loading Courses...</p>

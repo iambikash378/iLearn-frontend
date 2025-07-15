@@ -21,6 +21,7 @@ const PageContainer = styled(Container)(({theme}) =>({
 const TopCourses = styledReact.div`
   display:flex;
   flex-wrap:wrap;
+  justify-content:space-around;
 `;
 
 const MostPopularText = styledReact.h2`
