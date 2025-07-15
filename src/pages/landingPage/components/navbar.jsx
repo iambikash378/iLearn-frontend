@@ -63,7 +63,6 @@ const NavBar = () => {
 
 
   return (
-    <ThemeProvider theme={theme}>
         <NavbarContainer maxWidth={false}>
           <NavbarLogo component="img" src="/ilearn_logo.png" alt="ilearn logo" onClick={()=> Navigate('/')}></NavbarLogo>
           <NavbarElementContainer direction="row" spacing={2} >
@@ -72,11 +71,10 @@ const NavBar = () => {
             <NavbarElement> Premium Plans </NavbarElement>
           </NavbarElementContainer>
           <NavbarButtonStack direction={'row'}>
-            <NavbarButton variant='text' onClick={()=>Navigate('/login')} > <Typography color="black" fontWeight={"bold"}> Sign In</Typography></NavbarButton>
-            <NavbarButton variant='outlined' onClick={()=>Navigate('/signup')} sx={{margin:'5px;'}} ><Typography color="#0056d2" fontWeight={"bold"} >Register</Typography> </NavbarButton>
+            <NavbarButton variant='text' onClick={()=>Navigate('/loginpagenew')} > <Typography color="black" fontWeight={"bold"}> Sign In</Typography></NavbarButton>
+            <NavbarButton variant='outlined' onClick={()=>Navigate('/signuppagenew')} sx={{margin:'5px;'}} ><Typography color="#0056d2" fontWeight={"bold"} >Register</Typography> </NavbarButton>
           </NavbarButtonStack>
         </NavbarContainer>
-    </ThemeProvider>
   );
 };
 

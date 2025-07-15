@@ -1,13 +1,12 @@
 import styled from "styled-components";
 import NavBar from "../landingPage/components/navbar";
-import { FaApple, FaFacebook, FaGoogle, MdEmail } from "react-icons/fa";
+import { FaApple, FaFacebook, FaGoogle, FaPenAlt, MdEmail } from "react-icons/fa";
 import { IoMail } from "react-icons/io5";
 import { RiLockPasswordFill, RiLockPasswordLine } from "react-icons/ri";
 import { useNavigate } from "react-router-dom";
 
 
-
-const LoginPageContainer = styled.div`
+const SignupPageContainer = styled.div`
     display: flex;
     justify-content: center;
     align-items:center;
@@ -15,7 +14,7 @@ const LoginPageContainer = styled.div`
     height: 100vh;
     width: 100vw;
 `
-const LoginBoxContainer = styled.div`
+const SignupBoxContainer = styled.div`
     height: 70%;
     width: 25%;
     min-width: 300px;
@@ -35,8 +34,7 @@ const ILearnLogo = styled.h1`
     cursor: pointer;
 `;
 
-const SignIn = styled.h2`
-
+const Signup = styled.h2`
 `;
 
 const Form = styled.form`
@@ -60,29 +58,22 @@ const PasswordInput = styled.input`
 
 `;
 
-const SignInButton = styled.button`
+const SignUpButton = styled.button`
     background-color:#0056d2;
     color:#ffffff;
     border-radius: 10px;
     height: 30px;
     margin-top: 50px;
     cursor:pointer;
-    font-weight: bold;
+    font-weight:bold;
 `;
 
-const ForgotPassword = styled.div`
-    color:gray;
-    font-size: 0.8em;
-    text-align: right;
-    margin-top:2px;
-    cursor: pointer;
-`;
 
-const SignInWithOthers = styled.div `
+const SignUpWithOthers = styled.div `
     margin-top: 15px;
 `
 
-const SignInWithOthersText = styled.span`
+const SignUpWithOthersText = styled.span`
     display:inline-block;
     font-size: 0.8em;
 `;
@@ -144,22 +135,28 @@ const InputContainer = styled.div`
     position:relative;
 `;
 
-const NewToiLearn = styled.div`
-    margin-top: 50px;
+const AlreadyOnIlearn = styled.div`
+    margin-top: 40px;
     font-size: 0.9em;
 `
 
-export default function LoginPageNew(){
+export default function SignupPageNew(){
 
     const Navigate = useNavigate();
-    
+
     return(
-        <LoginPageContainer>
-            <LoginBoxContainer>
+        <SignupPageContainer>
+            <SignupBoxContainer>
                     {/* <ILearnLogo src="/ilearn_logo.png" alt="logo"/>  */}
                     <ILearnLogo onClick={()=> Navigate('/')}>i<span style={{color:'#0056d2'}}>Learn</span></ILearnLogo>
-                    <SignIn> <span style={{color:'#0056d2'}}>  Sign</span>In</SignIn>
+                    <Signup> <span style={{color:'#0056d2'}}>  Sign</span>Up</Signup>
                     <Form>
+
+                    <InputContainer>
+                            <FaPenAlt style={{position:'absolute', left: '5px', top:'10px'}} />
+                            <EmailInput type="text" for="fullname" name="fullname" placeholder='Full Name'/>
+                        </InputContainer>
+
                         <InputContainer>
                             <IoMail style={{position:'absolute', left: '5px', top:'10px'}} />
                             <EmailInput type="text" for="email" name="email" placeholder='Email'/>
@@ -170,13 +167,12 @@ export default function LoginPageNew(){
                             <PasswordInput type="password" for="password" name="password" placeholder='Password'/>
                         </InputContainer>
 
-                        <ForgotPassword> Forgot password ?</ForgotPassword>
-                        <SignInButton> Sign In</SignInButton>
+                        <SignUpButton> Sign Up</SignUpButton>
                     </Form>
 
-                    <SignInWithOthers>
-                       {/* <Dots>...........</Dots> */}  <SignInWithOthersText> Or sign in with </SignInWithOthersText> {/*<Dots>...........</Dots> */}
-                    </SignInWithOthers>
+                    <SignUpWithOthers>
+                       {/* <Dots>...........</Dots> */}  <SignUpWithOthersText> Or sign Up with </SignUpWithOthersText> {/*<Dots>...........</Dots> */}
+                    </SignUpWithOthers>
 
                     <GoogleFacebookApple>
                         <GoogleBox>
@@ -192,11 +188,11 @@ export default function LoginPageNew(){
 
                     </GoogleFacebookApple>
 
-                    <NewToiLearn>
-                        New to iLearn? <span style={{color:'#0056d2', cursor:'pointer'}} onClick={()=>Navigate('/signuppagenew')} > Sign Up</span>
-                    </NewToiLearn>
+                    <AlreadyOnIlearn>
+                        Already on iLearn?  <span style={{color:'#0056d2', cursor:'pointer'}} onClick={()=>Navigate('/loginpagenew')}>  Sign In</span>
+                    </AlreadyOnIlearn>
 
-            </LoginBoxContainer>
-        </LoginPageContainer>
+            </SignupBoxContainer>
+        </SignupPageContainer>
     )
 }

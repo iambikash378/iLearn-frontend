@@ -6,6 +6,7 @@ import ArrowDropDownRoundedIcon from '@mui/icons-material/ArrowDropDownRounded';
 import AccountCircleRoundedIcon from '@mui/icons-material/AccountCircleRounded';
 import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
+import { useNavigate } from 'react-router-dom';
 
 
 const TopBarBox = styled(Box)(({theme}) =>({
@@ -37,13 +38,15 @@ const TopBarLeftIcons = styled(Stack)(({theme}) => ({
 
 const TopBar = () =>{
 
+    const Navigate = useNavigate();
+
     return(
         <TopBarBox>
             <TopBarLeftIcons>
                 <MenuRoundedIcon color = 'primary' fontSize='large' sx={{cursor:'pointer'}} />
             </TopBarLeftIcons>
 
-            <TopBarCenterText variant='h2'> iLearn </TopBarCenterText>
+            <TopBarCenterText variant='h2' onClick={()=> Navigate('/')} sx={{cursor:'pointer'}}> iLearn </TopBarCenterText>
             <TopBarRightIcons direction='row'>
                 <CircleNotificationsRoundedIcon color='primary' fontSize='large' sx={{cursor:'pointer'}}/>
                 <AccountCircleRoundedIcon color='primary' fontSize='large' sx={{cursor:'pointer'}}/>

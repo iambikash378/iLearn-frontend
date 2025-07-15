@@ -8,6 +8,8 @@ import ExplorePage from "./pages/explorecourses/allcourses";
 import LectureVideoPage from "./pages/learningPage/lecturesandallpage";
 import LandingPage from "./pages/landingPage/landingpage";
 import ExploreAllPage from "./pages/explorecourses/explorecoursesFE";
+import LoginPageNew from "./pages/loginPage/login";
+import SignupPageNew from "./pages/signuppage/signup";
 
 
 export default function AppRoutes(){
@@ -22,6 +24,9 @@ export default function AppRoutes(){
             <Route path = "/allcourses" element = {<ExplorePage />} />
             <Route path ='/lecturepage' element = {<LectureVideoPage/>} />
             <Route path='/explorepageFE' element = {<ExploreAllPage />} />
+            <Route path='/loginpagenew' element = {<LoginPageNew/>} />
+            <Route path='/signuppagenew' element = {<SignupPageNew/>} />
+
         </Routes>
     )
 }
